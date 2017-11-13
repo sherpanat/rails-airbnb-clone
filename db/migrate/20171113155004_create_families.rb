@@ -4,7 +4,7 @@ class CreateFamilies < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :address
       t.integer :price_per_day
-      t.references :user, foreign_key: true, index: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
