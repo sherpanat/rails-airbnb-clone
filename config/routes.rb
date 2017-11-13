@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :customer do
+    get 'bookings/index'
+  end
+
   devise_for :users
   root to: 'families#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
