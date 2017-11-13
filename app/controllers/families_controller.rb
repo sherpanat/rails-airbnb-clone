@@ -17,7 +17,7 @@ class FamiliesController < ApplicationController
   private
 
   def find_family
-    @family = Family.finf(params[:id])
+    @family = Family.find(params[:id])
   end
 
 end
