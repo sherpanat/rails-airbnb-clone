@@ -5,14 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
-User.destroy_all
 Family.destroy_all
+User.destroy_all
 
-abdel = User.new(name: 'Abdel', email: 'abdeldubled@zozo.fr', password: 'magreb')
-abdel.save!
-famille_a = Family.new(name: 'gege', address: "bordeaux", price_per_day: 5, owner: abdel)
-famille_a.save!
 
-francis = User.new(name: 'Francis', email: 'saucisse@zozo.fr', password: 'porc')
-francis.save!
+puts 'Creating 16 fake Families...'
+
+
+
+16.times do
+
+  user = User.new(
+    name: Faker::Simpsons.character,
+    email: Faker::Internet.email,
+    password: "12345678"
+    )
+
+  user.save!
+
+  family = Family.new(
+    name: Faker::Name.last_name,
+    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    price_per_day:(150..1000).to_a.sample,
+    user_id: user[:id]
+  )
+  family.save!
+end
+puts 'Finished!'
+
+
+
+
+
