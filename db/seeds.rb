@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+
 
 Family.destroy_all
 User.destroy_all
@@ -13,7 +13,8 @@ User.destroy_all
 
 puts 'Creating 16 fake Families...'
 
-photos = []
+photos = ['chinese.jpg','pakistani.jpg','enculepapa.jpg', 'albinos.jpg', 'mormon.jpg']
+
 
 16.times do
 
@@ -27,12 +28,14 @@ photos = []
   user.save!
 
   family = Family.new(
-    name: user[:id].last_name,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    name: user[:last_name],
+    city: Faker::Address.city,
     price_per_day:(150..1000).to_a.sample,
-    user_id: user[:id]
+    user_id: user[:id],
+    photo: photos.sample
   )
   family.save!
+
 end
 puts 'Finished!'
 

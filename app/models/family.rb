@@ -3,6 +3,6 @@ class Family < ApplicationRecord
   has_many :bookings
   has_many :customers, through: :bookings
   validates :name, presence: true
-  validates :address, presence: true
+  validates :city, presence: true
   validates :price_per_day, presence: true
 end
