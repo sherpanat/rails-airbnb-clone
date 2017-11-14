@@ -9,8 +9,9 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+     <%= render 'layouts/flashes' %>
+     <%= render 'layouts/footer' %>
+    <%= render 'layouts/navbar' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= javascript_include_tag 'application' %>
