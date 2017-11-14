@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :families
   has_many :booked_families, through: :bookings
-  validates :name, presence: true
+  validates :last_name, presence: true
 end
