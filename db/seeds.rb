@@ -11,10 +11,22 @@ Family.destroy_all
 User.destroy_all
 
 
-puts 'Creating 16 fake Families...'
+puts 'Creating 16 fake Families and 26 Users...'
 
 photos = ['chinese.jpg','pakistani.jpg','enculepapa.jpg', 'albinos.jpg', 'mormon.jpg']
 
+10.times do
+
+  user = User.new(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Pokemon.name,
+    email: Faker::Internet.email,
+    password: "12345678"
+    )
+
+  user.save!
+
+end
 
 16.times do
 
