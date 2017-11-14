@@ -5,6 +5,9 @@
   background-position: center;
   color: white;
   position: relative;
+  display: flex;
+  flex-direction: vertical;
+  align-items: center
 }
 .card-user {
   position: absolute;

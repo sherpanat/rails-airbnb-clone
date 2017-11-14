@@ -1,0 +1,19 @@
+
+
+<h1>List of the available families</h1>
+
+<div class="container text-center">
+  <div class="row">
+    <% @families.each do |family| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= link_to family_path(family) do %>
+          <div class="card"  style="height: 250px, width: 170px">
+            <%= family.name %><br>
+            <%= image_tag 'chinese.jpg', :style => "height: 200px; width: 170px" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

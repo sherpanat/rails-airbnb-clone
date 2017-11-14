@@ -3,12 +3,13 @@ class FamiliesController < ApplicationController
   before_action :find_family, only: [:show]
 
   def index
-    @category = params[:category]
-    if @category.present?
-      @families = Family.where(category: @category)
-    else
-      @families = Family.all
-    end
+    @families = Family.all
+    # @category = params[:category]
+    # if @category.present?
+    #   @families = Family.where(category: @category)
+    # else
+    #   @families = Family.all
+    # end
   end
 
   def show
