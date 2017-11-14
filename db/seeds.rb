@@ -13,12 +13,13 @@ User.destroy_all
 
 puts 'Creating 16 fake Families...'
 
-
+photos = []
 
 16.times do
 
   user = User.new(
-    name: Faker::Simpsons.character,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Pokemon.name,
     email: Faker::Internet.email,
     password: "12345678"
     )
@@ -26,7 +27,7 @@ puts 'Creating 16 fake Families...'
   user.save!
 
   family = Family.new(
-    name: Faker::Name.last_name,
+    name: user[:id].last_name,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
     price_per_day:(150..1000).to_a.sample,
     user_id: user[:id]
