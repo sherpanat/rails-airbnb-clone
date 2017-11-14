@@ -44,7 +44,8 @@ end
     city: Faker::Address.city,
     price_per_day:(150..1000).to_a.sample,
     user_id: user[:id],
-    photo: photos.sample
+    photo: photos.sample,
+    country_origin: Faker::Address.country
   )
   family.save!
 
