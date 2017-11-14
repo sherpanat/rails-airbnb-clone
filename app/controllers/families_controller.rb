@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :find_family, only: [:show]
 
   def index
@@ -13,6 +13,7 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   private
