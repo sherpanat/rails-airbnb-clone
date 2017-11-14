@@ -12,6 +12,10 @@ class Customer::BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.family = @family
+    start_date = booking_params[:start_date]
+    end_date = booking_params[:end_date]
+    total_price = (end_date - start_date).to_i * @family.price_per_day
+    @booking.total_price = total_price
     if @booking.save!
       redirect_to customer_bookings_path
     else

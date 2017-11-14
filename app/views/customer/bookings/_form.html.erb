@@ -1,13 +1,11 @@
-view form for booking, need to be call in family show.
-
 <h3>Book your family</h3>
+
+<p>Price per day : <%= @family.price_per_day %> €</p>
 
 <p>
   <%= simple_form_for [@booking, @user, @family] do |f| %>
-    <%= f.input :start_date, hint: 'en cl ou ml' %>
-    <%= f.input :end_date, hint: 'en cl ou ml' %>
-    <%= f.input :description, hint: 'en cl ou ml' %>
-    <%= f.association :ingredient, collection: Ingredient.all %>
-    <%= f.submit "Create Dose", class: "btn btn-info" %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Book your family", class: "btn btn-danger" %>
   <% end %>
 </p>
