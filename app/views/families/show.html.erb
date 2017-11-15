@@ -1,14 +1,15 @@
-<div class="container text-center">
-  <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card"  style="height: 50px, width: 40rem">
-        <%= "Name: #{@family.name}" %><br>
-        <%= "City: #{@family.city}" %><br>
-        <%= image_tag 'chinese.jpg', :style => "height: 200px; width: 170px" %><br>
-        <%= "Price/day:  #{@family.price_per_day.to_s} €" %>
-        </div>
-      </div>
+<div class="container">
+  <div class="family-info">
+    <div class="text-center" style="height: 50px, width: 40rem">
+      <p>Name: <%= @family.name %></p>
+      <br>
+      <p>City: <%= @family.city %></p>
+      <br>
+      <%= image_tag @family.photo, class: "big-img" %><br>
+      <%= "Price/day:  #{@family.price_per_day.to_s} €" %>
+    </div>
+  </div>
+  <div class="form-container">
+    <%= render 'bookings/form' %>
   </div>
 </div>
-
-<%= render 'bookings/form' %>
