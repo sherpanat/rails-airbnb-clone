@@ -47,9 +47,15 @@
 .status.accepted {
   color: #04A366;
 }
-.status.declined {
+.status.ken {
   color: red;
 }
 .status.past {
   color: lightgrey;
+}
+
+.medium-img {
+  height: 100px;
+  width: 150px;
+  object-fit: fill;
 }
