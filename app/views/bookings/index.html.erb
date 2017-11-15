@@ -4,7 +4,7 @@
 <% @bookings.each do |booking| %>
   <div class="booked">
     <% family = find_family(booking.family_id) %>
-    <%= image_tag 'chinese.jpg', class: "medium-img" %>
+    <%= image_tag family.photo, class: "medium-img" %>
     <div class="booked-name">
       <h3>Family <%= family.name %></h3>
       <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
@@ -16,7 +16,7 @@
       </p>
     </div>
     <div class="booked-status">
-      <p class="status past">Already ken</p>
+      <p class="status ken">Already ken</p>
       <p class="price"><%= booking.total_price %>€</p>
     </div>
   </div>
