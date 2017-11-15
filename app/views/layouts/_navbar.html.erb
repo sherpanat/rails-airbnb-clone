@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "My bookings", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -18,12 +18,12 @@
           <%= image_tag "japonese_logo.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
+              <%= link_to root_path do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to families_path do %>
                 <i class="fa fa-search"></i> <%= t(".profile", default: "Look for a family") %>
               <% end %>
             </li>

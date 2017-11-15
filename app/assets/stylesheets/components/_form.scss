@@ -1,3 +1,5 @@
 .form-font-courier {
-  font-family: $body-font;
+  label {
+    font-family: $body-font;
+  }
 }

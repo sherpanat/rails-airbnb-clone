@@ -13,7 +13,7 @@
         <%= link_to family_path(family) do %>
           <div class="card"  style="height: 250px, width: 170px">
             <%= family.name %><br>
-            <%= image_tag 'chinese.jpg', :style => "height: 200px; width: 170px" %>
+            <%= image_tag family.photo, :style => "height: 200px; width: 170px" %>
           </div>
         <% end %>
       </div>

@@ -4,11 +4,8 @@ class FamiliesController < ApplicationController
 
   def index
     if params[:search].present?
-      @search = search_params.select {|key,value| value != ""}
-    end
-
-    if @search.present?
-      @families = Family.where(@search)
+      search = search_params.select {|key,value| value != ""}
+      @families = Family.where(search)
     else
       @families = Family.all
     end
