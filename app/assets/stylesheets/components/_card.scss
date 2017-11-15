@@ -4,7 +4,6 @@
   background-position: center;
   color: white;
   position: relative;
-  flex-direction: vertical;
   align-items: center;
   margin-bottom: 50px;
 
@@ -56,4 +55,21 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+.show-container {
+  margin: 20px 200px;
+  padding: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(208, 174, 90, 0.35);
+}
+.family-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  p {
+    font-size: 20px;
+  }
 }

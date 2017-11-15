@@ -1,17 +1,15 @@
-<div class="container">
+<div class="show-container">
+
   <div class="family-info">
     <div class="text-center" style="height: 50px, width: 40rem">
-      <p>Name: <%= @family.name %></p>
-      <br>
-      <p>City: <%= @family.city %></p>
-      <br>
-<!--       <div class="big-img" style="background-image: linear-gradient(-225deg, rgba(112,66,20,0.8) 0%, rgba(97,51,05,0.4) 50%), url('<%= image_path @family.photo %>');"> -->
-      <!-- </div> -->
+      <p>Family <%= @family.name %>, lives in  <%= @family.city %>
+        <p>A Ken experience at only  <%= @family.price_per_day.to_s %> €</p>
       <%= image_tag @family.photo, class: "big-img" %><br>
-      <%= "Price/day:  #{@family.price_per_day.to_s} €" %>
     </div>
   </div>
+
   <div class="form-container">
     <%= render 'bookings/form' %>
   </div>
+
 </div>
