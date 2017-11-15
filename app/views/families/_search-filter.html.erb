@@ -1,6 +1,5 @@
-
-<%= simple_form_for :search, url: families_path, method: :get, class: 'inline' do |f| %>
+<span class="form-font-courier" ><%= simple_form_for :search, url: families_path, method: :get, class: 'inline' do |f| %>
   <%= f.input :country_origin, collection: Family.all.map(&:country_origin) %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+  <%= f.input :name, collection: Family.all.map(&:name)%>
+  <%= f.button :submit, value: 'Ken' %>
+<% end %></span>
