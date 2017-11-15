@@ -19,7 +19,7 @@ photos = ['chinese.jpg','pakistani.jpg','enculepapa.jpg', 'albinos.jpg', 'mormon
 
   user = User.new(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Pokemon.name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "12345678"
     )
@@ -32,7 +32,7 @@ end
 
   user = User.new(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Pokemon.name,
+    last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "12345678"
     )
