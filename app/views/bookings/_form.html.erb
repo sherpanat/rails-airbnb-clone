@@ -5,8 +5,8 @@
 <p>
   <%= simple_form_for [@family, @booking] do |f| %>
     <%= f.error_notification %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date, error: 'The end date must after the start date' %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date, error: 'The end date must after the start date' %>
     <%= f.submit "Book your family", class: "btn btn-danger" %>
   <% end %>
 </p>
