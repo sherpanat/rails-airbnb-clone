@@ -5,6 +5,8 @@
       <br>
       <p>City: <%= @family.city %></p>
       <br>
+<!--       <div class="big-img" style="background-image: linear-gradient(-225deg, rgba(112,66,20,0.8) 0%, rgba(97,51,05,0.4) 50%), url('<%= image_path @family.photo %>');"> -->
+      <!-- </div> -->
       <%= image_tag @family.photo, class: "big-img" %><br>
       <%= "Price/day:  #{@family.price_per_day.to_s} €" %>
     </div>
