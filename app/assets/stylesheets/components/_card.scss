@@ -10,9 +10,12 @@
 
 }
 .card-title {
-  color: #FD9890;
-  font-weight: bolder;
+  color: #CDA453;
+  font-weight: normal;
   margin-bottom: 10px;
+  p {
+    color: #CDA453;
+  }
 }
 .card-user {
   position: absolute;
