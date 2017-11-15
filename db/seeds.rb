@@ -11,9 +11,10 @@ Family.destroy_all
 User.destroy_all
 
 
-puts 'Creating 16 fake Families and 26 Users...'
+puts 'Creating 20 fake Families and 30 Users...'
 
 photos = ['chinese.jpg','pakistani.jpg','enculepapa.jpg', 'albinos.jpg', 'mormon.jpg']
+countries = ['China', 'Pakistan', 'Australia', 'India', 'United States']
 
 10.times do
 
@@ -28,27 +29,28 @@ photos = ['chinese.jpg','pakistani.jpg','enculepapa.jpg', 'albinos.jpg', 'mormon
 
 end
 
-16.times do
+7.times do
+  photos.each_with_index do |p, i|
 
-  user = User.new(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: "12345678"
+    user = User.new(
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: "12345678"
+      )
+
+    user.save!
+
+    family = Family.new(
+      name: user[:last_name],
+      city: Faker::Address.city,
+      price_per_day:(15..100).to_a.sample,
+      user_id: user[:id],
+      photo: photos[i],
+      country_origin: countries[i]
     )
-
-  user.save!
-
-  family = Family.new(
-    name: user[:last_name],
-    city: Faker::Address.city,
-    price_per_day:(15..100).to_a.sample,
-    user_id: user[:id],
-    photo: photos.sample,
-    country_origin: Faker::Address.country
-  )
-  family.save!
-
+    family.save!
+  end
 end
 puts 'Finished!'
 
