@@ -1,23 +1,23 @@
-<h3>List of the available families</h3>
+<div class="wrapper", style="margin-left: 10px">
+  <h3>List of the available families</h3>
+  <div class="container", style="margin-top: 40px">
+    <div>
+      <%= render 'families/search-filter' %>
+    </div>
+  </div>
 
-<div class="container">
-  <div>
-    <%= render 'families/search-filter' %>
+  <div class="container text-center">
+    <div class="row">
+      <% @families.each do |family| %>
+        <div class="col-md-4">
+          <%= link_to family_path(family) do %>
+            <div class="card" >
+              <%= family.name, style: "color: #DFC88E"%><br>
+              <%= image_tag family.photo, :style => "height: 150px; width: 150px" %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<div class="container text-center">
-  <div class="row">
-    <% @families.each do |family| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to family_path(family) do %>
-          <div class="card"  style="height: 250px, width: 170px">
-            <%= family.name %><br>
-            <%= image_tag family.photo, :style => "height: 200px; width: 170px" %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
-

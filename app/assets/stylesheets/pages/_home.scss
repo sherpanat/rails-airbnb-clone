@@ -23,6 +23,7 @@
 .banner h2 {
   position:absolute;
   bottom:75px;
+  left: 30%;
   font-size: 40px;
   font-weight: bold;
   color: rgb(255, 255, 255);
@@ -36,9 +37,8 @@ left: 20px;
 font-weight: lighter;
 text-align:left;
 }
-.banner a {
-position: absolute;
-text-align: center;
-bottom: 15px;
-background-color: rgb(255, 88, 98);
+.btn-white-low {
+  background-color: white;
+  position: absolute;
+  bottom: 10px;
 }
