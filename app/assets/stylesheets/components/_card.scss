@@ -1,13 +1,18 @@
 .card {
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  display: flex;
   flex-direction: vertical;
-  align-items: center
+  align-items: center;
+  margin-bottom: 50px;
+
+}
+.card-title {
+  color: #FD9890;
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
 .card-user {
   position: absolute;
