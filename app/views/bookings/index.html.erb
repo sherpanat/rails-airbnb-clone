@@ -1,10 +1,22 @@
-<h1>Your families</h1>
+<h1>Your past ken bookings</h1>
 
 
 <% @bookings.each do |booking| %>
   <%= booking.start_date %>
+  <%= booking.end_date %>
+  <%= booking.total_price %>€
+  <%= booking.review_from_owner %>
+  <%= booking.review_from_customer %>
+  <% family = find_family(booking.family_id) %>
+  <%= family.name %>
+  <%= family.city %>
+  <%= family.country_origin %>
+  <%= family.photo %>
 <% end %>
 
-listing past and present bookings
-for each booking you can see it's review
+<br>
+
+
+<!-- for each booking you can see it's review
 call the external form to review your past bookings
+ -->
