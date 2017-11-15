@@ -3,13 +3,14 @@ class FamiliesController < ApplicationController
   before_action :find_family, only: [:show]
 
   def index
+    raise
     @families = Family.all
-    # @category = params[:category]
-    # if @category.present?
-    #   @families = Family.where(category: @category)
-    # else
-    #   @families = Family.all
-    # end
+    @country_origin = params[:country_origin]
+    if @country_origin.present?
+      @families = Family.where(country_origin: @country_origin)
+    else
+      @families = Family.all
+    end
   end
 
   def show
@@ -20,6 +21,10 @@ class FamiliesController < ApplicationController
 
   def find_family
     @family = Family.find(params[:id])
+  end
+
+  def search_params
+    params.require(:search).permit(:country_origin, :name)
   end
 
 end

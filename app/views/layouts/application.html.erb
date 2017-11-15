@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>TODO</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="search-filter.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -14,7 +16,7 @@
       <%= render 'layouts/flashes' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
-      <%= javascript_include_tag 'application' %>
     </div>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
