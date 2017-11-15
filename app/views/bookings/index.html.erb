@@ -1,10 +1,39 @@
-<h1>Your families</h1>
+<h1>Your past ken bookings</h1>
+
+<div class="booked">
+  <% @bookings.each do |booking| %>
+    <% family = find_family(booking.family_id) %>
+    <img class="avatar-large" src="<%= family.photo %>">
+    <div class="booked-name">
+      <h3>Family <%= family.name %></h3>
+      <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+    </div>
+    <div class="booked-body">
+      <p><strong>Origin: <%= family.country_origin %></strong></p>
+      <p>
+        Now living in <%= family.city %>
+      </p>
+    </div>
+    <div class="booked-status">
+      <p class="status past">Past</p>
+      <p class="price"><%= booking.total_price %>€</p>
+    </div>
+  <% end %>
+</div>
 
 
-<% @bookings.each do |booking| %>
-  <%= booking.start_date %>
-<% end %>
 
-listing past and present bookings
-for each booking you can see it's review
+  <%#= booking.review_from_owner %>
+  <%#= booking.review_from_customer %>
+
+
+
+
+
+
+<br>
+
+
+<!-- for each booking you can see it's review
 call the external form to review your past bookings
+ -->

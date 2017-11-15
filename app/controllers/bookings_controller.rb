@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_user, only: %i(index new create)
   before_action :set_family, only: %i(new create)
   def index
-    @bookings = Booking.where(user_id: params[:user_id])
+    @bookings = Booking.where(user_id: @user.id)
   end
 
   def new
