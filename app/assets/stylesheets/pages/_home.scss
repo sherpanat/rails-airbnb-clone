@@ -1,8 +1,8 @@
 // Specific CSS for your home-page
 
 .banner {
-  color: white;
   text-align: center;
+  color: rgb(220,220,220);
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
@@ -14,31 +14,31 @@
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   position: absolute;
-  top: 5px;
-  left: 10px;
-  font-size: 100px;
+  left: 12px;
+  font-size: 130px;
 }
 .banner h1 span{
   font-size: 50px;
 }
 .banner h2 {
   position:absolute;
-  bottom:20px;
-  font-size: 25px;
-  font-weight: lighter;
+  bottom:75px;
+  font-size: 40px;
+  font-weight: bold;
   color: rgb(255, 255, 255);
   opacity: 0.9;
-  margin-bottom: 30px;
 }
 .banner p {
 font-size: 15px;
 position: absolute;
-top: 130px;
-left: 12px;
+top: 160px;
+left: 20px;
 font-weight: lighter;
 text-align:left;
 }
 .banner a {
 position: absolute;
-bottom: 10px;
+text-align: center;
+bottom: 15px;
+background-color: rgb(255, 88, 98);
 }
