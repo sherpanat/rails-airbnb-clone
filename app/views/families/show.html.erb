@@ -1,3 +1,4 @@
+
 <div class="show-container">
 
   <div class="family-info">
@@ -13,3 +14,10 @@
   </div>
 
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    const coord = <%= raw @flat_coordinates.to_json %>;
+    alert('Flat coordinates are ' + coord.lat + ', ' + coord.lng);
+  <% end %>
+<% end %>

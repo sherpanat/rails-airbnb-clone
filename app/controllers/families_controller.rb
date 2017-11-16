@@ -13,6 +13,8 @@ class FamiliesController < ApplicationController
 
   def show
     @booking = Booking.new
+    @alert_message = "You are viewing #{@family.name}"
+    @flat_coordinates = { lat: @family.latitude, lng: @family.longitude }
   end
 
   private
