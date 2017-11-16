@@ -1,0 +1,7 @@
+<p>
+  <%= simple_form_for [booking] do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :review_from_customer, label: 'Review the family' %>
+    <%= f.submit "Submit", class: "btn btn-success" %>
+  <% end %>
+</p>
