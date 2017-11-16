@@ -16,6 +16,9 @@
           Now living in <%= family.city %>
         </p>
       </div>
+      <div class="form-container">
+        <%= choice_review(family, booking) %>
+      </div>
       <div class="booked-status">
         <p class="status ken">Ken on going</p>
         <p class="price"><%= booking.total_price %>€</p>
