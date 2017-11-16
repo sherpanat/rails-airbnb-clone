@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :families, only: %i(index show new create edit update destroy) do
     resources :bookings, only: %i(create)
   end
-  resources :bookings, only: %i(index)
+  resources :bookings, only: %i(index update)
 end
