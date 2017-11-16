@@ -9,7 +9,7 @@ module FamilyHelper
       end
     else
       if booking.review_from_customer
-        render 'bookings/display_review', booking: booking
+        render 'bookings/display_error_message', family: family
       else
         render 'bookings/review_family_form', booking: booking
       end
