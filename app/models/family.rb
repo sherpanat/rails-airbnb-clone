@@ -9,5 +9,7 @@ class Family < ApplicationRecord
   validates :churchgoer, presence: true, default: false
   validates :swinger, presence: true, default: true
   validates :members, presence: true
+  geocoded_by :country_origin
+  after_validation :geocode, if: :country_origin_changed?
 end
 
