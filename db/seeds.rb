@@ -47,7 +47,11 @@ end
       price_per_day:(15..100).to_a.sample,
       user_id: user[:id],
       photo: photos[i],
-      country_origin: countries[i]
+      country_origin: countries[i],
+      pension: %w(half-board full-board all-inclusive).sample,
+      churchgoer: [true, false].sample,
+      swinger: [true, false].sample,
+      members: (2..10).to_a.sample
     )
     family.save!
   end
