@@ -15,7 +15,7 @@
               <div class= "card-title">
                 <h5>Family <strong><%= family.name %></strong> - <%= family.price_per_day %>€/day</h5>
               </div>
-              <%= image_tag family.photo, :style => "height: 180px; width: 250px" %>
+              <%= cl_image_tag family.photo.path, :style => "height: 180px; width: 250px" %>
             </div>
           <% end %>
         </div>
