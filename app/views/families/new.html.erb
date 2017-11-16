@@ -1,5 +1,7 @@
 <h3>Register your family</h3>
 
+<div class=container>
+
 <p>
   <%= simple_form_for @family do |f| %>
     <%= f.error_notification %>
@@ -10,6 +12,10 @@
     <%= f.input :pension, collection: ["half-board", "full-board", "all-inclusive"] %>
     <%= f.input :churchgoer %>
     <%= f.input :swinger %>
+    <%= f.input :photo, as: :attachinary %>
+    <%= f.input :price_per_day %>
     <%= f.submit "Register", class: "btn btn-danger" %>
   <% end %>
 </p>
+
+</div>
