@@ -5,4 +5,9 @@ class Family < ApplicationRecord
   validates :name, presence: true
   validates :city, presence: true
   validates :price_per_day, presence: true
+  validates :pension, presence: true, inclusion: { in: %w(half-board full-board all-inclusive), message: "%{value} must be half-board, full-board or all-inclusive" }
+  validates :churchgoer, presence: true, default: false
+  validates :swinger, presence: true, default: true
+  validates :members, presence: true
 end
+
