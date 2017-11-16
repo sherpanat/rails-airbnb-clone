@@ -11,6 +11,11 @@ class FamiliesController < ApplicationController
     end
   end
 
+  def new
+    @family = Family.new
+  end
+
+
   def show
     @booking = Booking.new
   end
