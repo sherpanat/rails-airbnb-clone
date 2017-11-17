@@ -1,0 +1,16 @@
+#map {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.map-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+.regions_div{
+  text-align: center;
+}

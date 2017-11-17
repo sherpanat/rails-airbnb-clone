@@ -11,13 +11,28 @@ Family.destroy_all
 User.destroy_all
 
 
-puts 'Creating 20 fake Families and 30 Users...'
+puts 'Creating 30 fake Families and 40 Users...'
 
-photos = ['chinese.jpg','pakistani.jpg','enculepapa.jpg', 'albinos.jpg', 'mormon.jpg']
-countries = ['China', 'Pakistan', 'Australia', 'India', 'United States']
+photos = ['albinos.jpg','america.jpg','argentina.jpg', 'brazil.jpg', 'bulgaria.jpg', 'china.jpg', 'lithuania.jpg', 'mauritius.jpg', 'mongolia.jpg', 'mormon.jpg', 'pakistan.jpg', 'russia.jpg', 'singapore.jpg', 'sweden.jpg']
+countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla",
+  "Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands",
+  "Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica",
+  "Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea",
+  "Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana",
+  "Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India",
+  "Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia",
+  "Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania",
+  "Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia",
+  "New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal",
+  "Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles",
+  "Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan",
+  "Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia",
+  "Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Minor Outlying Islands","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
-10.times do
 
+print 'Creating users '
+20.times do
+  print '👨‍ 👩 ‍👧 ‍👧 '
   user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -28,8 +43,9 @@ countries = ['China', 'Pakistan', 'Australia', 'India', 'United States']
   user.save!
 
 end
+puts " done!"
 
-7.times do
+30.times do
   photos.each_with_index do |p, i|
 
     user = User.new(
@@ -41,13 +57,16 @@ end
 
     user.save!
 
+    k = countries.index(countries.sample)
+    j = photos.index(photos.sample)
+
     family = Family.new(
       name: user[:last_name],
       city: Faker::Address.city,
       price_per_day:(15..100).to_a.sample,
       user_id: user[:id],
-      photo: photos[i],
-      country_origin: countries[i],
+      photo: photos[j],
+      country_origin: countries[k],
       pension: %w(half-board full-board all-inclusive).sample,
       churchgoer: [true, false].sample,
       swinger: [true, false].sample,
