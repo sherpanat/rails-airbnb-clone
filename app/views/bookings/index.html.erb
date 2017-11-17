@@ -1,7 +1,7 @@
 
 <div class="container-white-large">
- <div class="Your-family">
-  <h2>Your Family</h2>
+ <div class="Your-family container">
+  <h2 class="title-gold">Your Family being ken</h2>
       <% @family.each do |f| %>
       <div class="family-for-rent booked">
         <%= cl_image_tag f.photo.path, class: "medium-img" %>
@@ -15,14 +15,21 @@
             <p>Churchgoer: <%= f.churchgoer %></p>
             <p>Swinger: <%= f.swinger %></p>
         </div>
+        <div class="booked-status">
+          <% f.bookings.each do |b| %>
+            <p>
+              <%= b.customer.first_name %>: <%= b.review_from_customer %>
+            </p>
+          <% end %>
+        </div>
       </div>
       <% end %>
  </div>
 </div>
 
 <div class="container-white-large">
-  <div class="ordered-families">
-      <h2>Families you're going to ken</h2>
+  <div class="ordered-families container">
+      <h2 class="title-gold">Families you're kening</h2>
       <% @bookings.each do |booking| %>
         <div class="booked">
           <% family = find_family(booking.family_id) %>
