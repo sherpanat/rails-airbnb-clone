@@ -61,10 +61,10 @@
   opacity: 0.1;
 }
 .show-container {
-  margin: 5px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px 80px;
   background-color: #FFFFFF;
 }
 .container-white-large {
@@ -72,8 +72,9 @@
   padding: 20px 0;
   align-items: center;
   background-color: #FFFFFF;
+  border: 1px solid #E2CA95 ;
 }
-.family-info {
+.family-picture {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,7 +83,6 @@
     font-size: 20px;
   }
 }
-
 .family-criteria {
   display: flex;
   justify-content: space-between;
@@ -92,7 +92,6 @@
     font-size: 20px;
   }
 }
-
 .title-gold {
   color: #E2CA95;
 }
