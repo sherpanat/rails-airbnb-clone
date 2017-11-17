@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   before_action :find_current_bookings, only: %i(index)
 
   def index
+    @family = Family.where(user_id: current_user.id)
   end
 
   def new

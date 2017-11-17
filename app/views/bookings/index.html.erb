@@ -1,44 +1,60 @@
-<div class="container">
-<div class="my-families">
-My Families
 
+<div class="container-white-large">
+ <div class="Your-family">
+  <h2>Your Family</h2>
+      <% @family.each do |f| %>
+      <div class="family-for-rent booked">
+        <%= cl_image_tag f.photo.path, class: "medium-img" %>
+        <div class="family-for-rent-infos booked-name">
+          <h3>Family <%= f.name %></h3>
+            <p>Origin: <%= f.country_origin %></p>
+            <p>Now living in <%= f.city %></p>
+            <p>Members: <%= f.members %></p>
+        </div>
+        <div class="family-for-rent-body booked-body">
+            <p>Churchgoer: <%= f.churchgoer %></p>
+            <p>Swinger: <%= f.swinger %></p>
+        </div>
+      </div>
+      <% end %>
+ </div>
 </div>
-<div class="ordered-families">
-    <h2>Families you're going to ken</h2>
 
+<div class="container-white-large">
+  <div class="ordered-families">
+      <h2>Families you're going to ken</h2>
 
-    <% @bookings.each do |booking| %>
-      <div class="booked">
-        <% family = find_family(booking.family_id) %>
-        <%= cl_image_tag family.photo.path, class: "medium-img" %>
-        <div class="booked-name">
-          <h3>Family <%= family.name %></h3>
-          <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+      <% @bookings.each do |booking| %>
+        <div class="booked">
+          <% family = find_family(booking.family_id) %>
+          <%= cl_image_tag family.photo.path, class: "medium-img" %>
+          <div class="booked-name">
+            <h3>Family <%= family.name %></h3>
+            <p>From <%= booking.start_date %> to <%= booking.end_date %></p>
+          </div>
+          <div class="booked-body">
+            <p><strong>Origin: <%= family.country_origin %></strong></p>
+            <p>
+              Now living in <%= family.city %>
+            </p>
+            <p>
+              Review from <%= current_user.first_name %> <%= current_user.last_name %>: <strong><%= booking.review_from_customer %></strong>
+            </p>
+          </div>
+          <div class="form-container">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#<%= booking.id %>">Add a review</button>
+          </div>
+          <div class="booked-status">
+            <p class="status ken">Ken on going</p>
+            <p class="price"><%= booking.total_price %>€</p>
+          </div>
         </div>
-        <div class="booked-body">
-          <p><strong>Origin: <%= family.country_origin %></strong></p>
-          <p>
-            Now living in <%= family.city %>
-          </p>
-          <p>
-            Review from <%= current_user.first_name %> <%= current_user.last_name %>: <strong><%= booking.review_from_customer %></strong>
-          </p>
+        <div id="<%= booking.id %>" class="collapse">
+          <%= choice_review(family, booking) %>
         </div>
-        <div class="form-container">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#<%= booking.id %>">Add a review</button>
-        </div>
-        <div class="booked-status">
-          <p class="status ken">Ken on going</p>
-          <p class="price"><%= booking.total_price %>€</p>
-        </div>
-      </div>
-      <div id="<%= booking.id %>" class="collapse">
-        <%= choice_review(family, booking) %>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
-
 
 
 
