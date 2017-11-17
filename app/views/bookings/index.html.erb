@@ -23,11 +23,10 @@
 <div class="container-white-large">
   <div class="ordered-families">
       <h2>Families you're going to ken</h2>
-
       <% @bookings.each do |booking| %>
         <div class="booked">
           <% family = find_family(booking.family_id) %>
-          <%= cl_image_tag family.photo.path, class: "medium-img" %>
+          <%= link_to cl_image_tag(family.photo.path, class: "medium-img"), family_path(family) %>
           <div class="booked-name">
             <h3>Family <%= family.name %></h3>
             <p>From <%= booking.start_date %> to <%= booking.end_date %></p>

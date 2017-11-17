@@ -1,3 +1,14 @@
 .form-font-courier {
   font-family: $body-font;
 }
+
+ .form-wrapper input[type="submit"] {
+   background: #E2CA95;
+   color: white;
+   border: none;
+   font-weight: bolder;
+   padding: 5px 30px;
+   -moz-border-radius: 2px;
+   border-radius: 2px;
+   cursor: pointer;
+ }

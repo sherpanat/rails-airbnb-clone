@@ -31,6 +31,7 @@ class FamiliesController < ApplicationController
   def show
     @booking = Booking.new
     @flat_coordinates = { lat: @family.latitude, lng: @family.longitude }
+    @bookings = Booking.where(family_id: @family.id)
   end
 
   def edit
