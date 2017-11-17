@@ -1,8 +1,12 @@
 
-<%= simple_form_for :search, url: families_path, method: :get, html: { class: 'inline form-font-courier' }  do |f| %>
-<div class="form-font-courier">
-  <%= f.input :country_origin, collection: Family.all.map(&:country_origin).uniq %>
-  <%= f.input :name, collection: Family.all.map(&:name)%>
-  <%= f.button :submit, value: 'Ken' %>
+<div>
+  <%= simple_form_for :search, url: families_path, method: :get, html: { class: 'form-font-courier form-inline form-wrapper' } do |f| %>
+  <div class="form-font-courier">
+    <%= f.input :country_origin, label: false, placeholder: "Country of origin", collection: Family.all.map(&:country_origin).uniq.sort %>
+    <%= f.input :pension, label: false, placeholder: 'Pension', collection: Family.all.map(&:pension).uniq %>
+    <%= f.input :churchgoer, label: false, placeholder: 'Churchgoer',collection: Family.all.map(&:churchgoer).uniq %>
+    <%= f.input :swinger, label: false, placeholder: 'Swinger',collection: Family.all.map(&:swinger).uniq %>
+    <%= f.button :submit, value: 'Ken' %>
+  </div>
+  <% end %>
 </div>
-<% end %>
