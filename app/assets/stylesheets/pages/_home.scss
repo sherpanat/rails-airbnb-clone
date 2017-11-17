@@ -3,7 +3,7 @@
 .banner {
   text-align: center;
   color: rgb(220,220,220);
-  height: 100vh;
+  height:  calc(100vh - 120px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: center;
@@ -37,8 +37,25 @@ left: 20px;
 font-weight: lighter;
 text-align:left;
 }
+.btn-low {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 10px;
+  left: 38%;
+}
 .btn-white-low {
   background-color: white;
-  position: absolute;
-  bottom: 10px;
+  padding: 10px 40px;
+  font-weight: bolder;
+  color: #DFC88E;
+  margin: 0 5px;
+}
+.btn-white-low-bis {
+  background-color: white;
+  padding: 10px 40px;
+  font-weight: bolder;
+  background-color: #DFC88E;
+  color: white;
 }

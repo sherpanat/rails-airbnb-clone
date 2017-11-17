@@ -1,8 +1,11 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(112,66,20,0.8) 0%, rgba(97,51,05,0.4) 50%), url('https://i.pinimg.com/736x/fc/50/c9/fc50c9fdaab9bcc3c79a1b7b791193c1--barbie-style-barbie-girl.jpg'); background-position: top; height: 480px" >
-  <div class="banner-content">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(112,66,20,0.8) 0%, rgba(97,51,05,0.4) 50%), url('https://i.pinimg.com/736x/fc/50/c9/fc50c9fdaab9bcc3c79a1b7b791193c1--barbie-style-barbie-girl.jpg'); background-position: top;" >
+  <div>
     <h1>Ken<span>.family</span></h1>
     <p>[Ken] m.n, (間) traditional Japanese unit of length used for tailor-made dwelling</p>
-    <h2>Offer you a tailor-made family</h2>
-    <%= link_to 'Ken', families_path, class: "btn btn-lg btn-white-low", style: "color: #DFC88E"%>
+    <h2>Treat yourself to a tailor-made family</h2>
+    <div class="btn-low">
+      <%= link_to 'Ken a family', families_path, class: "btn btn-lg btn-white-low" %>
+      <%= link_to 'Add your family', new_family_path, class: "btn btn-lg btn-white-low-bis" %>
+    </div>
   </div>
 </div>
