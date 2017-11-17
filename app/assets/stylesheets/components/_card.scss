@@ -82,3 +82,13 @@
     font-size: 20px;
   }
 }
+
+.family-criteria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  p {
+    font-size: 20px;
+  }
+}
