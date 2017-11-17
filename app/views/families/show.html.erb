@@ -46,9 +46,12 @@
 
 <div class="container-white-large">
   <div class="container">
+    <h2 class="title-gold">Reviews</h2>
     <% @bookings.each do |booking| %>
-    <h4>Review from <%= booking.customer.first_name %> <%= booking.customer.last_name %></h4>
-      <p><%= booking.review_from_customer %></p>
+      <% if booking.review_from_customer %>
+        <h4>Review from <%= booking.customer.first_name %> <%= booking.customer.last_name %></h4>
+        <p><%= booking.review_from_customer %></p>
+      <% end %>
     <% end %>
   </div>
 </div>
