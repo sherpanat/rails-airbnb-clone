@@ -21,7 +21,7 @@ class FamiliesController < ApplicationController
   def create
     @family = Family.new(family_params)
     @family.user_id = current_user.id
-    if @family.save!
+    if @family.save
       redirect_to bookings_path
     else
       render :new
