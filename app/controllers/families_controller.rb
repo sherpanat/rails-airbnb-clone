@@ -21,8 +21,8 @@ class FamiliesController < ApplicationController
   def create
     @family = Family.new(family_params)
     @family.user_id = current_user.id
-    if @family.save!
-        redirect_to families_path(@family)
+    if @family.save
+      redirect_to bookings_path
     else
       render :new
     end
@@ -66,7 +66,7 @@ class FamiliesController < ApplicationController
   end
 
   def family_params
-  params.require(:family).permit(:name, :country_origin, :city, :members, :pension, :churchgoer, :swinger, :photo, :price_per_day)
+    params.require(:family).permit(:name, :country_origin, :city, :members, :pension, :churchgoer, :swinger, :photo, :price_per_day)
   end
 end
 
