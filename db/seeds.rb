@@ -45,7 +45,7 @@ print 'Creating users '
 end
 puts " done!"
 
-30.times do
+1.times do
   photos.each_with_index do |p, i|
 
     user = User.new(
@@ -65,7 +65,7 @@ puts " done!"
       city: Faker::Address.city,
       price_per_day:(15..100).to_a.sample,
       user_id: user[:id],
-      photo: photos[j],
+      photo: cl_image_tag("http://res.cloudinary.com/malquoi/image/upload/v1510916085/sweden_tax5nm.jpg", width: 400, height: 300, crop: :fill),
       country_origin: countries[k],
       pension: %w(half-board full-board all-inclusive).sample,
       churchgoer: [true, false].sample,

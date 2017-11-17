@@ -8,7 +8,7 @@ class Family < ApplicationRecord
   validates :country_origin, presence: true
   validates :city, presence: true
   validates :pension, presence: true, inclusion: { in: %w(half-board full-board all-inclusive), message: "%{value} must be half-board, full-board or all-inclusive" }
-  validates :photo, presence: true
+  # validates :photo, presence: true
   # validates :churchgoer
   # validates :swinger
   # validates :members
