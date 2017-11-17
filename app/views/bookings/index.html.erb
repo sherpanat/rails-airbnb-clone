@@ -1,7 +1,10 @@
 
 <div class="container-white-large">
  <div class="Your-family container">
-  <h2 class="title-gold">Your Family being ken</h2>
+  <h2 class="title-gold">
+   <%= image_tag 'Ken_logo4.png', width: '80px' %>
+   Your Family being ken
+  </h2>
       <% @family.each do |f| %>
       <div class="family-for-rent booked">
         <%= cl_image_tag f.photo.path, class: "medium-img" %>
@@ -29,7 +32,10 @@
 
 <div class="container-white-large">
   <div class="ordered-families container">
-      <h2 class="title-gold">Families you're kening</h2>
+      <h2 class="title-gold">
+        <%= image_tag 'Ken_logo1.png', width: '80px' %>
+        Families you're kening
+      </h2>
       <% @bookings.each do |booking| %>
         <div class="booked">
           <% family = find_family(booking.family_id) %>
