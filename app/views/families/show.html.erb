@@ -1,7 +1,7 @@
-
 <div class="container-white-large">
   <div class="show-container">
-    <div class="family-info">
+
+    <div class="family-picture">
       <div class="text-center" style="height: 50px, width: 40rem">
         <%= cl_image_tag @family.photo.path, class: "big-img" %><br>
       </div>
@@ -26,10 +26,11 @@
           <i class="fa fa-square-o" aria-hidden="true"> Swinger</i>
         <% end %>
       </p>
-
-      <p>
+      <div style="width: 250px">
+        <p>
         From <%= @family.country_origin %>, the <%= @family.name %> family has <%= @family.members %> members and offers a <%= @family.pension %> ken service.
       </p>
+      </div>
     </div>
 
     <div class="form-container">
