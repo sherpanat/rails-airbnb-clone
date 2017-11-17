@@ -6,7 +6,7 @@
   <%= simple_form_for @family do |f| %>
     <%= f.error_notification %>
     <%= f.input :name, input_html: {value: current_user.last_name} %>
-    <%= f.input :country_origin, collection: ['China', 'Pakistan', 'Australia', 'India', 'United States']%>
+    <%= f.input :country_origin, collection: Family::COUNTRIES %>
     <%= f.input :city %>
     <%= f.input :members, collection: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10 or more"] %>
     <%= f.input :pension, collection: ["half-board", "full-board", "all-inclusive"] %>
