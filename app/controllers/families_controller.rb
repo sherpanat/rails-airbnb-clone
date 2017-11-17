@@ -1,7 +1,6 @@
 class FamiliesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :index_filtered]
-  before_action :find_family, only: [:show]
-
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :find_family, only: [:show, :update, :destroy]
   def index
     @countries_list = array_countries
 
@@ -15,10 +14,35 @@ class FamiliesController < ApplicationController
     end
   end
 
+  def new
+    @family = Family.new
+  end
+
+  def create
+    @family = Family.new(family_params)
+    @family.user_id = current_user.id
+    if @family.save!
+        redirect_to families_path(@family)
+    else
+      render :new
+    end
+  end
 
   def show
     @booking = Booking.new
     @flat_coordinates = { lat: @family.latitude, lng: @family.longitude }
+  end
+
+  def edit
+  end
+
+  def update
+    #@family.update(family_params)
+  end
+
+  def destroy
+    #@family.destroy
+    #redirect_to families_path
   end
 
   private
@@ -40,4 +64,9 @@ class FamiliesController < ApplicationController
   def search_params
     params.require(:search).permit(:country_origin, :name)
   end
+
+  def family_params
+  params.require(:family).permit(:name, :country_origin, :city, :members, :pension, :churchgoer, :swinger, :photo, :price_per_day)
+  end
 end
+

@@ -6,7 +6,7 @@
       <div class="text-center" style="height: 50px, width: 40rem">
         <p>Family <%= @family.name %>, lives in  <%= @family.city %>
           <p>A Ken experience at only  <%= @family.price_per_day.to_s %> €</p>
-        <%= image_tag @family.photo, class: "big-img" %><br>
+        <%= cl_image_tag @family.photo.path, class: "big-img" %><br>
       </div>
     </div>
 
