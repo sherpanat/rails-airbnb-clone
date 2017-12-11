@@ -13,7 +13,7 @@ User.destroy_all
 
 puts 'Creating 30 fake Families and 40 Users...'
 
-photos = ['albinos.jpg','america.jpg','argentina.jpg', 'brazil.jpg', 'bulgaria.jpg', 'china.jpg', 'lithuania.jpg', 'mauritius.jpg', 'mongolia.jpg', 'mormon.jpg', 'pakistan.jpg', 'russia.jpg', 'singapore.jpg', 'sweden.jpg']
+photos = ['app/assets/images/albinos.jpg','app/assets/images/america.jpg','app/assets/images/argentina.jpg', 'app/assets/images/brazil.jpg', 'app/assets/images/bulgaria.jpg', 'app/assets/images/china.jpg', 'app/assets/images/lithuania.jpg', 'app/assets/images/mauritius.jpg', 'app/assets/images/mongolia.jpg', 'app/assets/images/mormon.jpg', 'app/assets/images/pakistan.jpg', 'app/assets/images/russia.jpg', 'app/assets/images/singapore.jpg', 'app/assets/images/sweden.jpg']
 
 
 print 'Creating users '
@@ -46,7 +46,7 @@ puts " done!"
       city: Faker::Address.city,
       price_per_day:(15..100).to_a.sample,
       user_id: user[:id],
-      photo_url: Family::URL_LIST.sample,
+      photo_url: photos.sample,
       country_origin: Family::COUNTRIES.sample,
       pension: %w(half-board full-board all-inclusive).sample,
       churchgoer: [true, false].sample,
@@ -54,10 +54,6 @@ puts " done!"
       members: (2..10).to_a.sample
     )
     family.save!
+    puts "+1"
 end
 puts 'Finished!'
-
-
-
-
-
