@@ -5,7 +5,7 @@
     <%= f.input :pension, collection: Family.all.map(&:pension).uniq %>
     <%= f.input :churchgoer, collection: [true, false] %>
     <%= f.input :swinger, collection: [true, false] %>
-    <%= f.button :submit, value: 'Ken' %>
+    <%= f.button :submit, value: 'Cuddle' %>
     <%= f.button :button, 'Reset', :type => 'reset', :class => 'btn' %>
   </div>
   <% end %>
